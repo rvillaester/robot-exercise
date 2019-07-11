@@ -21,8 +21,8 @@ public class LeftCommand extends RobotCommand{
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Left Command on Robot: ");
-        builder.append(getRobot());
+        builder.append("Left Command");
+        if(getRobot().isInTheTable()) builder.append(String.format(" on Robot: %s", getRobot()));
         return builder.toString();
     }
 }

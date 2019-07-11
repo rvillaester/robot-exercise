@@ -8,8 +8,6 @@ public class Position {
     private int y;
     private Direction direction;
 
-    public Position(){}
-
     public Position(int x, int y, Direction direction){
         this.direction = direction;
         this.x = x;

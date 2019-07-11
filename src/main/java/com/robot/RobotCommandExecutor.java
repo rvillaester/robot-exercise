@@ -11,16 +11,15 @@ public class RobotCommandExecutor {
     private Robot robot;
 
     public RobotCommandExecutor(){
-        this.commandValidator = new RobotCommandValidator(5);
+        this(5);
     }
 
     public RobotCommandExecutor(int dimension){
-        this.commandValidator = new RobotCommandValidator(dimension);
+        this(new Robot(), 5);
     }
 
     public RobotCommandExecutor(Robot robot){
-        this.commandValidator = new RobotCommandValidator(5);
-        this.robot = robot;
+        this(robot, 5);
     }
 
     public RobotCommandExecutor(Robot robot, int dimension){
@@ -36,9 +35,7 @@ public class RobotCommandExecutor {
         }else{
             log.debug(String.format("Invalid command: %s", command));
         }
-        return isValid ? CommandStatus.SUCCESS : CommandStatus.FAIL;
+        return isValid ? CommandStatus.VALID : CommandStatus.INVALID;
     }
-
-
 
 }

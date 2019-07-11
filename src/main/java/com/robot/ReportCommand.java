@@ -24,8 +24,8 @@ public class ReportCommand extends RobotCommand {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Report Command on Robot: ");
-        builder.append(getRobot());
+        builder.append("Report Command");
+        if(getRobot().isInTheTable()) builder.append(String.format(" on Robot: %s", getRobot()));
         return builder.toString();
     }
 }
