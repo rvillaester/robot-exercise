@@ -42,9 +42,9 @@
 		
 		<!-- start test dependencies -->
 		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-api-mockito</artifactId>
-			<version>${powermock.version}</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.1.0</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- start test dependencies -->
