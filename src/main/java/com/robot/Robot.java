@@ -6,24 +6,46 @@ import lombok.Data;
 public class Robot {
 
     private Position position;
+    private boolean isInTheTable;
 
-    public CommandStatus place(Position position){
+    public void place(Position position){
         this.position = position;
+        this.isInTheTable = true;
     }
 
-    public CommandStatus move(){
+    public void move(){
         Direction direction = position.getDirection();
+        switch (direction){
+            case EAST:
+                position.moveX(-1);
+                break;
+            case WEST:
+                position.moveX(1);
+                break;
+            case SOUTH:
+                position.moveY(-1);
+                break;
+            case NORTH:
+                position.moveY(1);
+                break;
+        }
     }
 
-    public CommandStatus left(){
-
+    public void left(){
+        position.setDirection(DirectionUtil.nextDirectionToTheLeft(position.getDirection()));
     }
 
-    public CommandStatus right(){
-
+    public void right(){
+        position.setDirection(DirectionUtil.nextDirectionToTheRight(position.getDirection()));
     }
 
-    public void report(){
-
+    public String report(){
+        return position.toString();
     }
+
+    @Override
+    public String toString() {
+        return report();
+    }
+
 }

@@ -1,15 +1,28 @@
 package com.robot;
 
-public class RightCommand implements RobotCommand{
+public class RightCommand extends RobotCommand{
 
-    private Robot robot;
+    public RightCommand(){}
 
     public RightCommand(Robot robot){
-        this.robot = robot;
+        setRobot(robot);
     }
 
     @Override
     public void execute() {
-        robot.right();
+        getRobot().right();
+    }
+
+    @Override
+    public boolean isValid(int dimension) {
+        return getRobot().isInTheTable();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Right Command on Robot: ");
+        builder.append(getRobot());
+        return builder.toString();
     }
 }

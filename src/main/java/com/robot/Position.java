@@ -15,4 +15,24 @@ public class Position {
         this.x = x;
         this.y = y;
     }
+
+    public void moveX(int steps){
+        this.x = this.x + steps;
+    }
+
+    public void moveY(int steps){
+        this.y = this.y + steps;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(getX());
+        builder.append(",");
+        builder.append(getY());
+        builder.append(",");
+        builder.append(getDirection());
+        return builder.toString();
+    }
+
 }

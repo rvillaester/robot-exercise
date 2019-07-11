@@ -1,16 +1,19 @@
 package com.robot;
 
-public class LeftCommand extends RobotCommand{
+import lombok.extern.slf4j.Slf4j;
 
-    public LeftCommand(){}
+@Slf4j
+public class ReportCommand extends RobotCommand {
 
-    public LeftCommand(Robot robot){
+    public ReportCommand(){}
+
+    public ReportCommand(Robot robot){
         setRobot(robot);
     }
 
     @Override
     public void execute() {
-        getRobot().left();
+        log.info(getRobot().report());
     }
 
     @Override
@@ -21,7 +24,7 @@ public class LeftCommand extends RobotCommand{
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Left Command on Robot: ");
+        builder.append("Report Command on Robot: ");
         builder.append(getRobot());
         return builder.toString();
     }
