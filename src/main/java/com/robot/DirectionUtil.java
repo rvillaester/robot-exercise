@@ -14,13 +14,13 @@ public class DirectionUtil {
         directions.add(Direction.WEST);
     }
 
-    public static Direction nextDirectionToTheRight(Direction direction){
-        int index = directions.indexOf(direction);
+    public static Direction nextDirectionToTheRight(Direction currentDirection){
+        int index = directions.indexOf(currentDirection);
         return (index == directions.size()-1) ? directions.get(0) : directions.get(index + 1);
     }
 
-    public static Direction nextDirectionToTheLeft(Direction direction){
-        int index = directions.indexOf(direction);
+    public static Direction nextDirectionToTheLeft(Direction currentDirection){
+        int index = directions.indexOf(currentDirection);
         return (index == 0) ? directions.get(directions.size()-1) : directions.get(index - 1);
     }
 }
