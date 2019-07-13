@@ -23,7 +23,7 @@ There are multiple ways to run the application. There are sample command instruc
 ###### Preparations
 1. Create a file with .rc extension and put it under instructions folder.
 2. Each of these files contains list of commands that the robot will execute
-3. One command in each line
+3. One command per line
 4. The filename sans the extension will be the robot name. This is to distinguish which robot execute which command.
     - format will be <robot_name>.rc
     - e.g rey.rc
@@ -37,8 +37,26 @@ There are multiple ways to run the application. There are sample command instruc
 ## Run in your favorite IDE
 You can use whatever IDE you're comfortable with. I'm using Eclipse and IntelliJ.
 1. Open your favorite IDE
-2. Checkout the source in this repository
+2. Checkout the source code in this repository
 3. Run Main.java
-By default, the output will be on a file called output.log. Modify root logger in log4j2.xml if you want switch to console logging.
+<br/>By default, the output will be on a file called output.log. Modify root logger in log4j2.xml if you want switch to console logging.
+
+## Packaging The Application
+Package the application so that we can use or run it anywhere.
+1. Run **mvn clean package** against the pom.xml
+2. You will see the robot-exercise-<version>-distribution.zip under the **target** directory
+3. Unzip that file. It includes the following files:
+    - instructions
+        - this will contain all the .rc files
+        - you can add more files or remove the existing files
+    - lib
+        - contains the project dependencies
+        - no need to touch this folder
+    - robot-exercise-**<version>**.jar
+        - this is an executable jar
+        - double click to run
+    - output.log
+        - this file will be created once you've run the robot-exercise-**<version>**.jar
+        - this contains the run outputs
 
 
