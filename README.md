@@ -58,5 +58,3 @@ Package the application so that we can use or run it anywhere.
     - output.log
         - this file will be created once you've run the robot-exercise-**version**.jar
         - this will contain the run outputs
-
-
