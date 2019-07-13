@@ -1,4 +1,6 @@
-package com.robot;
+package com.robot.util;
+
+import com.robot.Direction;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,16 +1,24 @@
 package com.robot;
 
+import com.robot.util.DirectionUtil;
 import lombok.Data;
 
 @Data
 public class Robot {
 
+    private String name;
     private Position position;
-    private boolean isInTheTable;
+
+    public Robot(){
+        this("Unspecified");
+    }
+
+    public Robot(String name){
+        this.name = name;
+    }
 
     public void place(Position position){
         this.position = position;
-        this.isInTheTable = true;
     }
 
     public void move(){
@@ -42,6 +50,11 @@ public class Robot {
     public String report(){
         return position.toString();
     }
+
+    public boolean isInTheTable(){
+        return this.position != null;
+    }
+
 
     @Override
     public String toString() {

@@ -1,8 +1,18 @@
-package com.robot;
+package com.robot.command;
 
+import com.robot.Position;
+import com.robot.RectangularTableDimension;
+import com.robot.Robot;
+import lombok.Data;
+
+@Data
 public class PlaceCommand extends RobotCommand{
 
+    public static final String COMMAND = "PLACE";
+
     private Position position;
+
+    public PlaceCommand(){}
 
     public PlaceCommand(Position position){
         this.position = position;
@@ -19,13 +29,13 @@ public class PlaceCommand extends RobotCommand{
     }
 
     @Override
-    public boolean isValid(int dimension) {
+    public boolean isValid(RectangularTableDimension tableDimension) {
         int x = position.getX();
         int y = position.getY();
         if(x < 0 || y < 0){
             return false;
         }
-        return (x <= dimension && y <= dimension);
+        return (x <= tableDimension.getLength() && y <= tableDimension.getWidth());
     }
 
     @Override

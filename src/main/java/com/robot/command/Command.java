@@ -1,4 +1,4 @@
-package com.robot;
+package com.robot.command;
 
 public interface Command {
     void execute();

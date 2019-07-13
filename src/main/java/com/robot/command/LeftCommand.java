@@ -1,6 +1,11 @@
-package com.robot;
+package com.robot.command;
+
+import com.robot.RectangularTableDimension;
+import com.robot.Robot;
 
 public class LeftCommand extends RobotCommand{
+
+    public static final String COMMAND = "LEFT";
 
     public LeftCommand(){}
 
@@ -14,7 +19,7 @@ public class LeftCommand extends RobotCommand{
     }
 
     @Override
-    public boolean isValid(int dimension) {
+    public boolean isValid(RectangularTableDimension dimension) {
         return getRobot().isInTheTable();
     }
 

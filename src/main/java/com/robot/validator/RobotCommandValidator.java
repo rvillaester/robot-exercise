@@ -1,10 +1,14 @@
-package com.robot;
+package com.robot.validator;
+
+import com.robot.RectangularTableDimension;
+import com.robot.command.Command;
+import com.robot.command.RobotCommand;
 
 public class RobotCommandValidator implements CommandValidator {
 
-    private int dimension;
+    private RectangularTableDimension dimension;
 
-    public RobotCommandValidator(int dimension){
+    public RobotCommandValidator(RectangularTableDimension dimension){
         this.dimension = dimension;
     }
 

@@ -1,6 +1,13 @@
-package com.robot;
+package com.robot.command;
+
+import com.robot.Direction;
+import com.robot.Position;
+import com.robot.RectangularTableDimension;
+import com.robot.Robot;
 
 public class MoveCommand extends RobotCommand{
+
+    public static final String COMMAND = "MOVE";
 
     public MoveCommand(){}
 
@@ -14,7 +21,7 @@ public class MoveCommand extends RobotCommand{
     }
 
     @Override
-    public boolean isValid(int dimension) {
+    public boolean isValid(RectangularTableDimension tableDimension) {
         if(!getRobot().isInTheTable()){
             return false;
         }
@@ -29,13 +36,13 @@ public class MoveCommand extends RobotCommand{
                 isValid = x != 0;
                 break;
             case WEST:
-                isValid = x != dimension;
+                isValid = x != tableDimension.getLength();
                 break;
             case SOUTH:
                 isValid = y != 0;
                 break;
             case NORTH:
-                isValid = y != dimension;
+                isValid = y != tableDimension.getWidth();
                 break;
         }
 

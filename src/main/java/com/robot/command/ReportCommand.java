@@ -1,9 +1,13 @@
-package com.robot;
+package com.robot.command;
 
+import com.robot.RectangularTableDimension;
+import com.robot.Robot;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ReportCommand extends RobotCommand {
+
+    public static final String COMMAND = "REPORT";
 
     public ReportCommand(){}
 
@@ -17,7 +21,7 @@ public class ReportCommand extends RobotCommand {
     }
 
     @Override
-    public boolean isValid(int dimension) {
+    public boolean isValid(RectangularTableDimension dimension) {
         return getRobot().isInTheTable();
     }
 
