@@ -21,7 +21,7 @@ The application is a simulation of a robot moving on a rectangular table top. Th
 There are multiple ways to run the application. There are sample command instructions included in the package - refer to the instructions folder.
 
 ###### Preparations
-1. It uses the 5 by 5 rectangular table dimension by default. You can change this configuration in **table.properties** file
+1. It uses 5 by 5 rectangular table dimension by default. You can change this configuration in **table.properties** file
 2. Create a file with **.rc** extension and put it under **instructions** folder.
 3. Each of these files contains list of commands that the robot will execute
 4. One command per line
@@ -44,10 +44,10 @@ You can use whatever IDE you're comfortable with. I'm using Eclipse and IntelliJ
 ## Packaging The Application
 Package the application so that we can use or run it anywhere.
 1. Run **mvn clean package** against **pom.xml**
-2. You will see the robot-exercise-**version**-distribution.zip under the **target** directory
+2. You will see the robot-exercise-**version**-distribution.zip under **target** directory
 3. Unzip that file. It includes the following files:
     - instructions
-        - this will contain all the .rc files
+        - this will contain all the **.rc** files
         - you can add more files or remove the existing files
     - lib
         - contains the project dependencies
