@@ -39,7 +39,7 @@ public class ConfigurationFileUtil {
                  * catch all types of exceptions and log it
                  * if this happens, it will use the default table dimension
                  */
-                log.error(String.format("Error in loading %s", TABLE_PROPERTIES), e);
+                log.warn(String.format("Error in loading %s", TABLE_PROPERTIES), e);
             }
         }
         return tableDimension;
@@ -58,7 +58,11 @@ public class ConfigurationFileUtil {
                         inst.setCommands(extractCommands(f));
                         instructions.add(inst);
                     } catch (IOException e) {
-                        log.error(String.format("Error in reading file %s", name), e);
+                        /**
+                         * disregard when issue encounter on reading a particular file
+                         * we'll skip it and move to the next file
+                         */
+                        log.warn(String.format("Error in reading file %s", name), e);
                     }
                 });
         return instructions;
