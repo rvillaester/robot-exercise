@@ -21,11 +21,12 @@ The application is a simulation of a robot moving on a rectangular table top. Th
 There are multiple ways to run the application. There are sample command instructions included in the package - refer to the instructions folder.
 
 ###### Preparations
-1. It uses 5 by 5 rectangular table dimension by default. You can change this configuration in **table.properties** file
+1. It uses 5 by 5 rectangular table dimension by default. You can change this configuration in **table.properties** file.
 2. Create a file with **.rc** extension and put it under **instructions** folder.
-3. Each of these files contains list of commands that the robot will execute
-4. One command per line
-5. The filename sans the extension will be the robot name. This is to distinguish which robot execute which command.
+3. Each of these files contains list of commands that the robot will execute.
+4. Commands are not case sensitive. You can mix upper and lower cases as long as the spelling is correct.
+5. One command per line
+6. The filename sans the extension will be the robot name. This is to distinguish which robot execute which instructions.
     - format will be **robot_name**.rc
     - e.g rey.rc
     - rey will be the robot name
