@@ -114,5 +114,7 @@ public class TestInstructionValidator {
         assertFalse(validator.validate("PLACE 1,2|SOUTH"));
         assertFalse(validator.validate("PLACE,1,2,SOUTH"));
         assertFalse(validator.validate("PLACE | 1,2,WEST"));
+        assertFalse(validator.validate("PLACE 0w1,2,WEST"));
+        assertFalse(validator.validate("PLACE 1,x,EAST"));
     }
 }
